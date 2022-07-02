@@ -11,7 +11,6 @@
     </v-card>
     <v-container>
     <v-row
-      justify="flex-start"
       align="center"
     >
       <v-col
@@ -20,8 +19,7 @@
       >
         <v-form ref="form">
           <v-text-field
-            :counter="max"
-            :rules="rules"
+            v-model="productName"
             label="Nombre del producto"
           ></v-text-field>
         </v-form>
@@ -40,8 +38,8 @@ import ProductService from "@/services/products-service.js";
 
 export default {
   name: "Product",
-
   data: () => ({
+    productName: "",
     Products: [{
       "productId": 1,
       "name": "Tarjeta de Video Nvidea 3050"
@@ -77,9 +75,10 @@ export default {
         });
     },
     addProduct(){
+      console.log("XD")
       this.Products.push({
       "productId": 6,
-      "name": "Tarjeta de Video Nvidea 3060"
+      "name": this.productName,
       })
     },
   beforeMount() {
