@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-app-bar app color="#5f75da" dark>
+      <div class="flex align-center">
+        <v-img
+          alt="MyOrders Logo"
+          class="mr-2"
+          contain
+          src="@/assets/logo.png"
+          transition="scale-transition"
+          height="50"
+        />
+      </div>
+
+    </v-app-bar>
+
+    <v-main>
+      <Product />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Product from "./components/Product";
 
 export default {
   name: "App",
+
   components: {
-    HelloWorld,
+    Product,
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>
