@@ -27,7 +27,7 @@
         </v-form>
       </v-col>
       <v-btn
-        :click="this.addProduct"
+        v-on:click="this.addProduct"
         elevation="2"
       >Agregar</v-btn>
     </v-row>
